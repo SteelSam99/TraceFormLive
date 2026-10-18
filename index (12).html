@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TraceForm Analytics</title>
+<meta name="description" content="Archival research and document provenance. We trace claims back to their primary sources — and report what the record does not support.">
+<style>
+  :root{
+    --ink:#14161a;
+    --ink-soft:#4a5058;
+    --rule:#d8d6d0;
+    --paper:#faf9f6;
+    --accent:#0f5c52;
+    --measure:34rem;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.5rem;}
+
+  /* masthead */
+  header{border-bottom:1px solid var(--rule);padding:4.5rem 0 2rem;}
+  .mark{
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 1.1rem;
+  }
+  h1{
+    font-size:clamp(2rem,6vw,2.9rem);
+    line-height:1.12;font-weight:400;letter-spacing:-.015em;margin:0 0 1rem;
+  }
+  .standfirst{
+    font-size:1.12rem;color:var(--ink-soft);margin:0;max-width:var(--measure);
+  }
+
+  /* sections */
+  section{padding:3.25rem 0;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:0;}
+  h2{
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:600;color:var(--ink-soft);margin:0 0 1.5rem;
+  }
+  h3{font-size:1.1rem;font-weight:600;margin:0 0 .4rem;letter-spacing:-.005em;}
+  p{margin:0 0 1.15rem;max-width:var(--measure);}
+  p:last-child{margin-bottom:0;}
+
+  /* standards list */
+  .standards{list-style:none;margin:0;padding:0;}
+  .standards li{
+    padding:1.1rem 0 1.1rem 0;
+    border-top:1px solid var(--rule);
+    max-width:var(--measure);
+  }
+  .standards li:first-child{border-top:0;padding-top:0;}
+  .standards p{margin:0;color:var(--ink-soft);font-size:.97rem;}
+
+  /* register / empty state */
+  .register{
+    border:1px solid var(--rule);
+    background:#fff;
+    padding:1.6rem 1.5rem;
+    max-width:var(--measure);
+  }
+  .register p{font-size:.97rem;color:var(--ink-soft);}
+  .register p:first-child{color:var(--ink);}
+
+  /* contact */
+  .contact a{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px solid rgba(15,92,82,.35);
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.95rem;
+  }
+  .contact a:hover{border-bottom-color:var(--accent);}
+
+  footer{
+    padding:2.5rem 0 4rem;
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.7rem;letter-spacing:.08em;color:#8a8f96;
+    border-top:1px solid var(--rule);
+  }
+
+  @media (max-width:480px){
+    body{font-size:17px;}
+    header{padding-top:3rem;}
+    section{padding:2.5rem 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="mark">TraceForm Analytics</p>
+    <h1>Where did this claim come from?</h1>
+    <p class="standfirst">We trace statements of fact back through the documentary record to their earliest verifiable source — and report plainly where that record runs out.</p>
+  </header>
+
+  <section>
+    <h2>The work</h2>
+    <p>A claim enters circulation, gets repeated, acquires citations, and becomes settled. Often the citations lead somewhere real. Sometimes they lead to another repetition, then another, and then to nothing at all.</p>
+    <p>A Trace follows that chain backward through archival holdings across multiple national and institutional collections, establishes where the claim first appears in a surviving document, and documents every link along the way — including the broken ones.</p>
+    <p>The output is a written report: the chain as found, the sources with their identifiers, and an explicit account of what could not be established.</p>
+  </section>
+
+  <section>
+    <h2>Standards</h2>
+    <ul class="standards">
+      <li>
+        <h3>Gaps are reported, not filled</h3>
+        <p>Where the record is silent, the report says so. A plausible reconstruction is not a finding.</p>
+      </li>
+      <li>
+        <h3>Inference is labeled as inference</h3>
+        <p>Material that was retrieved and material that was reasoned to are marked separately and never blended.</p>
+      </li>
+      <li>
+        <h3>No substitution of sources</h3>
+        <p>If a specified archive is unreachable or returns nothing, that is logged as a result. Nothing is quietly swapped in from elsewhere.</p>
+      </li>
+      <li>
+        <h3>A partial retrieval yields a partial report</h3>
+        <p>Scope is set before the work begins and reported against honestly. Completeness is never implied.</p>
+      </li>
+      <li>
+        <h3>Negative findings are findings</h3>
+        <p>"This claim has no traceable origin" is a result worth paying for, and it is delivered as readily as a confirmation.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Published Traces</h2>
+    <div class="register">
+      <p>No Traces have been published yet.</p>
+      <p>The first reports are in preparation. Each one will be listed here with its subject, the dates the work ran, and the full report — including the Traces that failed to confirm what they set out to examine.</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Enquiries</h2>
+    <p>Commissions, questions about scope, and requests for a sample methodology statement.</p>
+    <p><a href="mailto:SPeacock@traceformanalytics.com">SPeacock@traceformanalytics.com</a></p>
+  </section>
+
+  <footer>
+    TraceForm Analytics · S. Peacock · Tennessee, USA
+  </footer>
+
+</div>
+
+</body>
+</html>
