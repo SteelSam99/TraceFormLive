@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" width="520" height="112" role="img" aria-labelledby="tl-t">
+<title id="tl-t">TraceForm Analytics — The Architecture of Continuity</title>
+<!--
+  HORIZONTAL LOCKUP — site header, email signature
+
+  Dial reduced to 112px height: 36 divisions instead of 60, two
+  threads instead of three, two nodes instead of three. The reverse
+  time vector is preserved — that is the part that carries meaning
+  and it is the last thing to be simplified away.
+
+  Threads are bounded inside the viewBox with clearance for the
+  arrowheads. Both ends of the primary thread are marked; the
+  secondary thread is left open so the bundle does not read as
+  four arrows at small sizes.
+-->
+<defs>
+  <linearGradient id="l-ring" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#1c5f57"/><stop offset="1" stop-color="#4fd6c1"/>
+  </linearGradient>
+  <linearGradient id="l-thread" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#1c5f57" stop-opacity="0.55"/>
+    <stop offset="0.4" stop-color="#2f9e8f"/>
+    <stop offset="1" stop-color="#7defd8"/>
+  </linearGradient>
+
+  <!--
+    orient="auto-start-reverse" is the whole trick: without it the
+    marker-start head points forward along the path, i.e. inward.
+    refX places the tip of the head on the path endpoint.
+  -->
+  <marker id="tf-arrow-light" markerWidth="4.2" markerHeight="4.2"
+          refX="5.6" refY="3" orient="auto-start-reverse"
+          markerUnits="strokeWidth" viewBox="0 0 6 6">
+    <path d="M0,0 L0,6 L6,3 z" fill="#7defd8"/>
+  </marker>
+  <marker id="tf-arrow-dark" markerWidth="4.2" markerHeight="4.2"
+          refX="5.6" refY="3" orient="auto-start-reverse"
+          markerUnits="strokeWidth" viewBox="0 0 6 6">
+    <path d="M0,0 L0,6 L6,3 z" fill="#2f9e8f"/>
+  </marker>
+</defs>
+
+<circle cx="56" cy="56" r="41" fill="none" stroke="url(#l-ring)" stroke-width="1.9"
+        stroke-dasharray="80 13 128 10" stroke-dashoffset="40"/>
+<g stroke="#2f9e8f" stroke-linecap="butt">
+      <line x1="56.0" y1="27.0" x2="56.0" y2="17.0" stroke-width="1.5" opacity="0.55"/>
+      <line x1="61.7" y1="23.5" x2="62.8" y2="17.6" stroke-width="0.9" opacity="0.3"/>
+      <line x1="67.3" y1="25.0" x2="69.3" y2="19.4" stroke-width="0.9" opacity="0.3"/>
+      <line x1="72.5" y1="27.4" x2="75.5" y2="22.2" stroke-width="0.9" opacity="0.3"/>
+      <line x1="77.2" y1="30.7" x2="81.1" y2="26.1" stroke-width="0.9" opacity="0.3"/>
+      <line x1="78.2" y1="37.4" x2="85.9" y2="30.9" stroke-width="1.5" opacity="0.55"/>
+      <line x1="84.6" y1="39.5" x2="89.8" y2="36.5" stroke-width="0.9" opacity="0.3"/>
+      <line x1="87.0" y1="44.7" x2="92.6" y2="42.7" stroke-width="0.9" opacity="0.3"/>
+      <line x1="88.5" y1="50.3" x2="94.4" y2="49.2" stroke-width="0.9" opacity="0.3"/>
+      <line x1="89.0" y1="56.0" x2="95.0" y2="56.0" stroke-width="0.9" opacity="0.3"/>
+      <line x1="84.6" y1="61.0" x2="94.4" y2="62.8" stroke-width="1.5" opacity="0.55"/>
+      <line x1="87.0" y1="67.3" x2="92.6" y2="69.3" stroke-width="0.9" opacity="0.3"/>
+      <line x1="84.6" y1="72.5" x2="89.8" y2="75.5" stroke-width="0.9" opacity="0.3"/>
+      <line x1="81.3" y1="77.2" x2="85.9" y2="81.1" stroke-width="0.9" opacity="0.3"/>
+      <line x1="77.2" y1="81.3" x2="81.1" y2="85.9" stroke-width="0.9" opacity="0.3"/>
+      <line x1="70.5" y1="81.1" x2="75.5" y2="89.8" stroke-width="1.5" opacity="0.55"/>
+      <line x1="67.3" y1="87.0" x2="69.3" y2="92.6" stroke-width="0.9" opacity="0.3"/>
+      <line x1="61.7" y1="88.5" x2="62.8" y2="94.4" stroke-width="0.9" opacity="0.3"/>
+      <line x1="56.0" y1="89.0" x2="56.0" y2="95.0" stroke-width="0.9" opacity="0.3"/>
+      <line x1="50.3" y1="88.5" x2="49.2" y2="94.4" stroke-width="0.9" opacity="0.3"/>
+      <line x1="46.1" y1="83.3" x2="42.7" y2="92.6" stroke-width="1.5" opacity="0.55"/>
+      <line x1="39.5" y1="84.6" x2="36.5" y2="89.8" stroke-width="0.9" opacity="0.3"/>
+      <line x1="34.8" y1="81.3" x2="30.9" y2="85.9" stroke-width="0.9" opacity="0.3"/>
+      <line x1="30.7" y1="77.2" x2="26.1" y2="81.1" stroke-width="0.9" opacity="0.3"/>
+      <line x1="27.4" y1="72.5" x2="22.2" y2="75.5" stroke-width="0.9" opacity="0.3"/>
+      <line x1="28.7" y1="65.9" x2="19.4" y2="69.3" stroke-width="1.5" opacity="0.55"/>
+      <line x1="23.5" y1="61.7" x2="17.6" y2="62.8" stroke-width="0.9" opacity="0.3"/>
+      <line x1="23.0" y1="56.0" x2="17.0" y2="56.0" stroke-width="0.9" opacity="0.3"/>
+      <line x1="23.5" y1="50.3" x2="17.6" y2="49.2" stroke-width="0.9" opacity="0.3"/>
+      <line x1="25.0" y1="44.7" x2="19.4" y2="42.7" stroke-width="0.9" opacity="0.3"/>
+      <line x1="30.9" y1="41.5" x2="22.2" y2="36.5" stroke-width="1.5" opacity="0.55"/>
+      <line x1="30.7" y1="34.8" x2="26.1" y2="30.9" stroke-width="0.9" opacity="0.3"/>
+      <line x1="34.8" y1="30.7" x2="30.9" y2="26.1" stroke-width="0.9" opacity="0.3"/>
+      <line x1="39.5" y1="27.4" x2="36.5" y2="22.2" stroke-width="0.9" opacity="0.3"/>
+      <line x1="44.7" y1="25.0" x2="42.7" y2="19.4" stroke-width="0.9" opacity="0.3"/>
+      <line x1="51.0" y1="27.4" x2="49.2" y2="17.6" stroke-width="1.5" opacity="0.55"/>
+</g>
+
+<circle cx="56" cy="56" r="26" fill="none" stroke="#2f9e8f"
+        stroke-width="1.1" stroke-dasharray="1 5" stroke-linecap="round" opacity="0.4"/>
+
+<g fill="none" stroke="url(#l-thread)" stroke-linecap="round">
+  <!-- secondary thread: unmarked, trails behind -->
+  <path d="M 95 27 C 77 44, 56 50, 54 61 C 52 72, 70 76, 62 87 C 56 95, 38 99, 25 103"
+        stroke-width="1.7" opacity="0.55"/>
+
+  <!-- primary thread: arrowhead at both ends -->
+  <path d="M 88 21 C 69 39, 48 45, 46 57 C 44 69, 62 73, 54 85 C 48 94, 29 99, 15 103"
+        stroke-width="2.3"
+        marker-start="url(#tf-arrow-light)"
+        marker-end="url(#tf-arrow-dark)"/>
+</g>
+
+<circle cx="82" cy="30" r="4" fill="#eafffb"/>
+<circle cx="45" cy="59" r="4" fill="#eafffb"/>
+
+<line x1="122" y1="26" x2="122" y2="86" stroke="#1d4550" stroke-width="1"/>
+
+<text x="142" y="48" font-family="SF Mono, Consolas, DejaVu Sans Mono, monospace"
+      font-size="27" font-weight="700" letter-spacing="2.2" fill="#4fd6c1">TraceForm</text>
+<text x="143" y="68" font-family="SF Mono, Consolas, DejaVu Sans Mono, monospace"
+      font-size="15" font-weight="600" letter-spacing="5.0" fill="#4fd6c1" opacity="0.86">Analytics</text>
+<text x="144" y="84" font-family="SF Mono, Consolas, DejaVu Sans Mono, monospace"
+      font-size="9.5" font-weight="400" letter-spacing="1.7" font-style="italic"
+      fill="#4e6b68">The Architecture of Continuity</text>
+</svg>
