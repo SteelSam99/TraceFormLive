@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TraceForm Analytics</title>
 <meta name="description" content="Archival research and document provenance. We trace claims back to their primary sources — and report what the record does not support.">
+<link rel="icon" href="traceform-dial.svg" type="image/svg+xml">
 <style>
   :root{
     --ink:#14161a;
@@ -25,24 +26,48 @@
     line-height:1.62;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:46rem;margin:0 auto;padding:0 1.5rem;}
+  /* Containing block for the dial. Its height is the full scroll
+     length of the document, so the dial's percentage height below
+     resolves against the whole page rather than the viewport. */
+  .page{position:relative;}
+  .wrap{max-width:46rem;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1;}
 
-  /* masthead */
-  header{border-bottom:1px solid var(--rule);padding:4.5rem 0 2rem;}
-  .mark{
-    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-    font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--accent);margin:0 0 1.1rem;
+  /* ---- dial backdrop -----------------------------------------
+     Begins just under the lockup and spans 35% of the document's
+     total scroll length. Oversized and bled off both edges so it
+     reads as architecture behind the page, not a placed image. */
+  .dial-field{
+    position:absolute;
+    top:8rem;                /* just below the lockup */
+    left:0;right:0;
+    height:35%;              /* of the full document height */
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
+            mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
   }
+  .dial-field img{
+    position:absolute;
+    left:50%;
+    top:46%;
+    transform:translate(-50%,-50%);
+    width:min(132%,1180px);
+    height:auto;
+    opacity:.12;
+    user-select:none;
+  }
+
+  /* ---- masthead ---- */
+  header{padding:3rem 0 2.25rem;border-bottom:1px solid var(--rule);}
+  .lockup{display:block;width:clamp(16rem,42vw,21rem);height:auto;margin:0 0 2.75rem;}
   h1{
     font-size:clamp(2rem,6vw,2.9rem);
     line-height:1.12;font-weight:400;letter-spacing:-.015em;margin:0 0 1rem;
   }
-  .standfirst{
-    font-size:1.12rem;color:var(--ink-soft);margin:0;max-width:var(--measure);
-  }
+  .standfirst{font-size:1.12rem;color:var(--ink-soft);margin:0;max-width:var(--measure);}
 
-  /* sections */
+  /* ---- sections ---- */
   section{padding:3.25rem 0;border-bottom:1px solid var(--rule);}
   section:last-of-type{border-bottom:0;}
   h2{
@@ -54,30 +79,17 @@
   p{margin:0 0 1.15rem;max-width:var(--measure);}
   p:last-child{margin-bottom:0;}
 
-  /* standards list */
   .standards{list-style:none;margin:0;padding:0;}
-  .standards li{
-    padding:1.1rem 0 1.1rem 0;
-    border-top:1px solid var(--rule);
-    max-width:var(--measure);
-  }
+  .standards li{padding:1.1rem 0;border-top:1px solid var(--rule);max-width:var(--measure);}
   .standards li:first-child{border-top:0;padding-top:0;}
   .standards p{margin:0;color:var(--ink-soft);font-size:.97rem;}
 
-  /* register / empty state */
-  .register{
-    border:1px solid var(--rule);
-    background:#fff;
-    padding:1.6rem 1.5rem;
-    max-width:var(--measure);
-  }
+  .register{border:1px solid var(--rule);background:#fff;padding:1.6rem 1.5rem;max-width:var(--measure);}
   .register p{font-size:.97rem;color:var(--ink-soft);}
   .register p:first-child{color:var(--ink);}
 
-  /* contact */
   .contact a{
-    color:var(--accent);
-    text-decoration:none;
+    color:var(--accent);text-decoration:none;
     border-bottom:1px solid rgba(15,92,82,.35);
     font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
     font-size:.95rem;
@@ -91,19 +103,28 @@
     border-top:1px solid var(--rule);
   }
 
-  @media (max-width:480px){
+  @media (max-width:560px){
     body{font-size:17px;}
-    header{padding-top:3rem;}
+    header{padding-top:2.25rem;}
     section{padding:2.5rem 0;}
+    .dial-field{top:5.5rem;}
+    .dial-field img{width:190%;opacity:.1;}
   }
 </style>
 </head>
 <body>
 
+<div class="page">
+
+<div class="dial-field" aria-hidden="true">
+  <img src="traceform-dial.svg" alt="">
+</div>
+
 <div class="wrap">
 
   <header>
-    <p class="mark">TraceForm Analytics</p>
+    <img class="lockup" src="traceform-lockup.svg"
+         alt="TraceForm Analytics — The Architecture of Continuity">
     <h1>Where did this claim come from?</h1>
     <p class="standfirst">We trace statements of fact back through the documentary record to their earliest verifiable source — and report plainly where that record runs out.</p>
   </header>
@@ -158,6 +179,8 @@
   <footer>
     TraceForm Analytics · S. Peacock · Tennessee, USA
   </footer>
+
+</div>
 
 </div>
 
