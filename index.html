@@ -84,9 +84,23 @@
   .standards li:first-child{border-top:0;padding-top:0;}
   .standards p{margin:0;color:var(--ink-soft);font-size:.97rem;}
 
-  .register{border:1px solid var(--rule);background:#fff;padding:1.6rem 1.5rem;max-width:var(--measure);}
-  .register p{font-size:.97rem;color:var(--ink-soft);}
-  .register p:first-child{color:var(--ink);}
+  .register-list{list-style:none;margin:0;padding:0;counter-reset:trace;}
+  .register-list li{
+    max-width:var(--measure);padding:1.5rem 0;
+    border-top:1px solid var(--rule);
+  }
+  .register-list li:first-child{border-top:0;padding-top:0;}
+  .register-list .when{
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted,#737e86);margin:0 0 .5rem;
+  }
+  .register-list h3{margin:0 0 .55rem;font-size:1.12rem;line-height:1.35;}
+  .register-list h3 a{color:var(--ink);text-decoration:none;
+    border-bottom:1px solid rgba(15,92,82,.4);}
+  .register-list h3 a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .register-list li > p:last-child{margin:0;font-size:.97rem;color:var(--ink-soft);}
+  .register-note{margin-top:1.75rem;font-size:.88rem;color:var(--muted,#737e86);}
 
   .contact a{
     color:var(--accent);text-decoration:none;
@@ -162,12 +176,23 @@
     </ul>
   </section>
 
-  <section>
+  <section id="traces">
     <h2>Published Traces</h2>
-    <div class="register">
-      <p>No Traces have been published yet.</p>
-      <p>The first reports are in preparation. Each one will be listed here with its subject, the dates the work ran, and the full report — including the Traces that failed to confirm what they set out to examine.</p>
-    </div>
+
+    <ol class="register-list">
+      <li>
+        <p class="when">Ran 10 – 28 September 2026 · §D.1</p>
+        <h3><a href="traces/eyeglasses.html">The Eyeglasses Trace: Optics Transmission and the 1285–86 Invention</a></h3>
+        <p>Did the theoretical optics underlying lens-craft reach Italy before spectacles appeared? The Latin optics is confirmed present, in two independent places, decades early. The link from that theory to the first pair of spectacles is not established — and the inventor's name was not recovered. The report says so rather than naming a candidate.</p>
+      </li>
+      <li>
+        <p class="when">Established 10 September 2026 · companion</p>
+        <h3><a href="traces/tca-2.html">TCA-2: The Salvino Armati Attribution</a></h3>
+        <p>A fabricated epitaph enters print in Florence in 1738, is doubted by 1750, carved in stone in 1855, demolished by scholarship in 1920 — and is still in children's books in 1995. The chain, node by node, with the year the citations stop.</p>
+      </li>
+    </ol>
+
+    <p class="register-note">Each Trace is listed with the dates the work ran and the full report, including what it could not establish.</p>
   </section>
 
   <section class="contact">

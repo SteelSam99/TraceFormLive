@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TCA-2 · The Salvino Armati Attribution — TraceForm Analytics</title>
+<meta name="description" content="How a fabricated epitaph for Salvino degli Armati entered print in 1738, was refuted in 1920, and was still being repeated in 1995.">
+<link rel="icon" href="../traceform-dial.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&family=Spectral+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --film:#F4F5F3;
+  --ink:#141A20;
+  --ink-soft:#3D474F;
+  --muted:#737E86;
+  --rule:#C4CAC8;
+  --rule-faint:#DFE3E1;
+  --match:#F2D45C;
+  --match-deep:#8A6E00;
+  --band:#1B2530;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--film); color:var(--ink);
+  font-family:"Spectral",Georgia,serif; font-weight:400;
+  font-size:17px; line-height:1.62;
+  font-variant-numeric:oldstyle-nums;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+.narrow{max-width:640px}
+a{color:inherit}
+mark{
+  background:linear-gradient(transparent 62%, var(--match) 62%);
+  color:inherit; padding:0 .06em;
+}
+code,.id{
+  font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  font-size:.78em; letter-spacing:-.01em; color:var(--muted);
+  font-variant-numeric:lining-nums;
+}
+
+/* ---------- masthead ---------- */
+.mast{border-bottom:1px solid var(--rule);}
+.mast .wrap{display:flex;justify-content:space-between;align-items:baseline;
+  gap:24px;padding-top:20px;padding-bottom:14px;flex-wrap:wrap}
+.mark{font-family:"Spectral SC",serif;font-weight:600;font-size:15px;letter-spacing:.06em}
+.mast .meta{font-size:13px;color:var(--muted);font-variant-numeric:lining-nums}
+
+/* ---------- hero: the epitaph ---------- */
+.hero{padding:88px 0 72px;border-bottom:1px solid var(--rule)}
+.stone{
+  max-width:660px;
+  border-top:3px solid var(--ink); border-bottom:1px solid var(--ink);
+  padding:34px 0 30px;
+}
+.stone p{
+  margin:0; font-size:clamp(25px,4.4vw,40px); line-height:1.28;
+  font-weight:300; font-style:italic; letter-spacing:-.012em;
+}
+.stone .yr{display:block;margin-top:20px;font-size:15px;font-style:normal;
+  font-family:"Spectral SC",serif;letter-spacing:.09em;color:var(--muted)}
+.verdict{
+  max-width:560px;margin:34px 0 0;font-size:20px;line-height:1.5;
+  font-weight:600;
+}
+.verdict span{font-weight:400;color:var(--ink-soft);display:block;margin-top:12px;font-size:17px}
+
+/* ---------- lede ---------- */
+.lede{padding:64px 0 24px}
+.lede h2{font-size:15px;font-family:"Spectral SC",serif;font-weight:600;
+  letter-spacing:.08em;margin:0 0 18px;color:var(--muted)}
+.lede p{margin:0 0 18px}
+.pull{
+  margin:40px 0 8px;padding-left:22px;border-left:3px solid var(--match);
+  font-size:19px;line-height:1.5;
+}
+
+/* ---------- figures ---------- */
+.figs{display:flex;flex-wrap:wrap;gap:2px;margin:52px 0 8px;
+  border-top:1px solid var(--rule)}
+.fig{flex:1 1 150px;padding:20px 18px 18px;border-right:1px solid var(--rule-faint)}
+.fig:last-child{border-right:0}
+.fig b{display:block;font-size:34px;font-weight:300;line-height:1;
+  font-variant-numeric:lining-nums;letter-spacing:-.02em}
+.fig small{display:block;margin-top:9px;font-size:13.5px;color:var(--muted);line-height:1.4}
+
+/* ---------- chain ---------- */
+.chain{padding:76px 0 0}
+.chain h2{font-size:15px;font-family:"Spectral SC",serif;font-weight:600;
+  letter-spacing:.08em;margin:0 0 6px;color:var(--muted)}
+.chain .note{max-width:600px;color:var(--ink-soft);margin:0 0 46px;font-size:16px}
+
+.node{position:relative;padding:0 0 40px 132px}
+.node::before{                 /* the transmission line */
+  content:"";position:absolute;left:92px;top:9px;bottom:-9px;width:2px;
+  background:var(--ink);
+}
+.node:last-child::before{display:none}
+.node.free::before{            /* provenance lost — line goes dotted */
+  background:none;
+  border-left:2px dotted var(--muted);
+}
+.node::after{                  /* the node marker */
+  content:"";position:absolute;left:86px;top:9px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--film);border:2px solid var(--ink);
+}
+.node.free::after{border-color:var(--muted)}
+.node.unver::after{border-style:dashed;border-color:var(--muted)}
+.node.burst::after{background:var(--match);border-color:var(--ink);
+  width:20px;height:20px;left:83px;top:6px}
+
+.node .yr{
+  position:absolute;left:0;top:2px;width:72px;text-align:right;
+  font-size:19px;font-variant-numeric:lining-nums;letter-spacing:-.01em;
+}
+.node.unver .yr{color:var(--muted)}
+.node h3{margin:0 0 4px;font-size:19px;font-weight:600;line-height:1.35}
+.node .where{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+.node blockquote{
+  margin:12px 0 10px;padding:0;font-style:italic;font-weight:300;
+  color:var(--ink-soft);font-size:16.5px;line-height:1.55;
+  max-width:56ch;
+}
+.node p.gloss{margin:8px 0 0;max-width:58ch;font-size:16px;color:var(--ink-soft)}
+.tag{
+  display:inline-block;font-family:"Spectral SC",serif;font-size:11.5px;
+  letter-spacing:.08em;padding:2px 8px;border:1px solid var(--rule);
+  color:var(--muted);margin-left:8px;vertical-align:2px;
+}
+.tag.no{border-color:var(--match-deep);color:var(--match-deep)}
+
+/* ---------- 1893 band ---------- */
+.band{background:var(--band);color:var(--film);margin:12px 0 44px;
+  padding:44px 0 40px}
+.band .wrap{max-width:1040px}
+.band h3{margin:0 0 8px;font-size:22px;font-weight:600;color:var(--film)}
+.band .sub{margin:0 0 28px;color:#9BA7B2;font-size:16px;max-width:60ch}
+.papers{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 26px}
+.paper{
+  font-size:12.5px;padding:5px 9px;border:1px solid #35424F;color:#C6D0D8;
+  font-variant-numeric:lining-nums;
+}
+.paper.nz{border-color:var(--match);color:var(--match)}
+.band .after{margin:0;font-size:16.5px;color:#C6D0D8;max-width:62ch}
+.band .after strong{color:var(--film);font-weight:600}
+
+/* ---------- open ---------- */
+.open{padding:60px 0 20px;border-top:1px solid var(--rule);margin-top:60px}
+.open h2{font-size:15px;font-family:"Spectral SC",serif;font-weight:600;
+  letter-spacing:.08em;margin:0 0 22px;color:var(--muted)}
+.open ol{margin:0;padding-left:1.3em;max-width:62ch}
+.open li{margin:0 0 14px;color:var(--ink-soft)}
+.open li b{color:var(--ink);font-weight:600}
+
+/* ---------- colophon ---------- */
+.colo{border-top:1px solid var(--rule);margin-top:56px;padding:30px 0 70px;
+  font-size:14px;color:var(--muted);max-width:66ch}
+.colo p{margin:0 0 10px}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .node{padding-left:0;padding-top:30px}
+  .node .yr{position:static;width:auto;text-align:left;display:block;
+    margin-bottom:6px;font-size:17px;color:var(--muted)}
+  .node::before{left:-14px;top:34px}
+  .node::after{left:-20px;top:34px}
+  .node.burst::after{left:-23px;top:31px}
+  .hero{padding:56px 0 48px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <a class="mark" href="../index.html" style="text-decoration:none">TraceForm</a>
+    <div class="meta">TCA-2 · established 10 September 2026 · <a href="../index.html#traces" style="color:inherit">All Traces</a></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="stone">
+      <p>Here lies Salvino, son of Armato degli Armati of Florence,
+         inventor of eyeglasses. May God forgive his sins.</p>
+      <span class="yr">Anno Domini MCCCXVII</span>
+    </div>
+    <p class="verdict">No such epitaph was ever carved for such a man.
+      <span>The monument came down in 1923. The sentence is still in
+      print.</span></p>
+  </div>
+</section>
+
+<section class="lede">
+  <div class="wrap narrow">
+    <h2>What this traces</h2>
+    <p>Spectacles were not invented by Salvino degli Armati. The
+      attribution enters the printed record in Florence in 1738, is
+      doubted in print by 1750, reaches English by 1823, is set in
+      stone in 1855, is demolished by scholarship in 1920 — and is
+      still being repeated in children's books in 1995.</p>
+    <p>This is not a history of spectacles. It is a history of a
+      sentence, and of what happens to a sentence once enough people
+      have repeated it.</p>
+    <p class="pull">The man in the record is real. He held civic
+      office in Florence. What was attached to him was not his.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="figs">
+      <div class="fig"><b>257</b><small>years of verified record,<br>1738 to 1995</small></div>
+      <div class="fig"><b>12</b><small>years from publication<br>to first printed doubt</small></div>
+      <div class="fig"><b>18</b><small>newspapers carrying it<br>in 1893 alone</small></div>
+      <div class="fig"><b>75</b><small>years it has outlived<br>its own refutation</small></div>
+      <div class="fig"><b>4</b><small>languages traced:<br>Italian, English, French, Spanish</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="chain">
+  <div class="wrap">
+    <h2>The chain</h2>
+    <p class="note">A solid line marks a node that names its source. After
+      1893 the line goes dotted: the claim keeps travelling, but it stops
+      citing anything.</p>
+
+    <div class="node unver">
+      <span class="yr">1684</span>
+      <h3>Ferdinando Leopoldo del Migliore <span class="tag no">unverified</span></h3>
+      <p class="where"><em>Firenze città nobilissima illustrata</em></p>
+      <p class="gloss">Reported to be the first to claim an epitaph in
+        Santa Maria Maggiore. Not retrieved, not confirmed, and it has
+        not passed the instrument. Treated here as a hypothesis, not a
+        link.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1738</span>
+      <h3>Domenico Maria Manni prints the treatise</h3>
+      <p class="where">Firenze: Stamperia d'Anton-Maria Albizzini · three
+        copies located</p>
+      <blockquote>DEGLI OCCHIALI da naso INVENTATI DA
+        <mark>SALVINO ARMATI</mark> GENTILUOMO FIORENTINO TRATTATO
+        ISTORICO</blockquote>
+      <p class="gloss">Held by the Wellcome Library
+        <span class="id">b30519706</span>, the National Central Library
+        of Florence <span class="id">bub_gb_PnM8I4dNvZ4C</span>, and the
+        Getty Research Institute
+        <span class="id">degliocchialidan00mann</span>. The first book on
+        the history of spectacles.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1750</span>
+      <h3>Doubted in print, twelve years later</h3>
+      <p class="where"><em>Scelta di dissertazioni cavate da' più celebri
+        autori</em>, p. 238</p>
+      <blockquote>Vera cosa è poi, che della persona di
+        <mark>Salvino Armati</mark> non abbiamo memoria, fuorché il
+        sapersi…</blockquote>
+      <p class="gloss">The claim was never uncontested. It was contested
+        and propagated at the same time, in the same language, for the
+        next 170 years.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1767</span>
+      <h3>The real man, in a register of office-holders</h3>
+      <p class="where">Florentine <em>prioristi</em>, 1767 · 1779 · 1783</p>
+      <blockquote>Michele di Cione Maffei. <mark>Salvino Armati</mark>.
+        Matteo Benvenuti.</blockquote>
+      <p class="gloss">Three separate civic registers return the name
+        with no mention of spectacles — one entry in a list, between two
+        ordinary names. The fabrication did not invent a person. It
+        attached an invention to a name already in the record, which is
+        why arguing from absence could never dislodge it.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1823</span>
+      <h3>Into English, in a Providence newspaper</h3>
+      <p class="where"><em>The Rhode-Island American, and general
+        advertiser</em>, 25 November 1823, page 1</p>
+      <blockquote>the introduction of sp6ctack*, which
+        <mark>Salvino degli Armati</mark> first constructed about tlm
+        year 1285.</blockquote>
+      <p class="gloss">Verified to the page. The damaged words are the
+        scan's own — the phrase was found inside newspaper OCR this
+        degraded, which is why no ordinary search reaches it. Note the
+        date given: 1285, against 1284 and 1286 elsewhere. The year was
+        never stable either.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1842</span>
+      <h3>Under scholarly discussion, before the monument</h3>
+      <p class="where"><em>Archivio storico italiano</em>, p. 332</p>
+      <blockquote>epitaffio». E in rubrica marginale:
+        «<mark>Salvino Armati</mark> inventore degli occhiali, al
+        parer…</blockquote>
+      <p class="gloss">Thirteen years before Villari's plaque. By this
+        point the claim has been in Italian print for a century and in
+        English for nineteen years.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1855</span>
+      <h3>Villari sets it in stone</h3>
+      <p class="where">Plaque, Florence · removed 1923</p>
+      <p class="gloss">Commonly named as the fabrication. It is not. It
+        is the sixth node in a chain already 117 years old, and the
+        monument records a claim rather than making one.</p>
+    </div>
+
+    <div class="node">
+      <span class="yr">1861</span>
+      <h3>Into French</h3>
+      <p class="where"><em>Hygiène de la vue</em>, p. 130 · BnF Gallica</p>
+      <blockquote>est forcé d'accorder la palme d'inventeur à
+        <mark>Salvino Armati</mark>, gentilhomme florentin qui vivait
+        vers 1300</blockquote>
+    </div>
+
+    <div class="node burst">
+      <span class="yr">1893</span>
+      <h3>Saturation</h3>
+      <p class="where">Eighteen newspapers, two continents, one year</p>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <h3>May to December 1893</h3>
+    <p class="sub">Papers with no editorial relationship, running the same
+      item within months of each other. That signature is syndication —
+      a wire filler moving on its own.</p>
+    <div class="papers">
+      <span class="paper">Elko, Nev.</span>
+      <span class="paper">Cheyenne, Wyo.</span>
+      <span class="paper">Lambertville, N.J.</span>
+      <span class="paper">S. Londonderry, Vt.</span>
+      <span class="paper">Worthington, Minn.</span>
+      <span class="paper">Indianapolis, Ind.</span>
+      <span class="paper">Deer Lodge, Mont.</span>
+      <span class="paper">Deer Lodge, Mont.</span>
+      <span class="paper">Penn's Grove, N.J.</span>
+      <span class="paper">Toledo, Ohio <em>(Ameryka</em>, Polish)</span>
+      <span class="paper">St. Johnsbury, Vt.</span>
+      <span class="paper">River Falls, Wis.</span>
+      <span class="paper">Anderson C.H., S.C.</span>
+      <span class="paper">Hillsboro, Ohio</span>
+      <span class="paper">Portland, Me.</span>
+      <span class="paper">Wichita, Kan.</span>
+      <span class="paper nz">Otago Witness, N.Z.</span>
+      <span class="paper nz">West Coast Times, N.Z.</span>
+    </div>
+    <p class="after">Before 1893 every appearance names a source — Manni,
+      or an epitaph, or another book. <strong>After 1893 they stop.</strong>
+      The claim keeps moving and the citation trail does not move with it.
+      That is the step that cannot be taken back: not the fabrication, not
+      the monument, but the year the sentence became something everyone
+      already knew.</p>
+  </div>
+</div>
+
+<section class="chain" style="padding-top:0">
+  <div class="wrap">
+
+    <div class="node free">
+      <span class="yr">1901</span>
+      <h3>The epitaph, translated into French</h3>
+      <p class="where"><em>Coup d'oeil rétrospectif sur la lunetterie</em>,
+        p. 296 · Wellcome</p>
+      <blockquote>Ci-gît <mark>Salvino Armati</mark> d'Armato, de
+        Florence, inventeur…</blockquote>
+    </div>
+
+    <div class="node free">
+      <span class="yr">1905</span>
+      <h3>Into the optical trade's own press</h3>
+      <p class="where"><em>The Jewelers' Circular and Horological
+        Review</em>, 4 January 1905, p. 84</p>
+    </div>
+
+    <div class="node free">
+      <span class="yr">1920</span>
+      <h3>Isidoro del Lungo takes it apart</h3>
+      <p class="where">Demolition</p>
+      <p class="gloss">No other source credits Salvino. A fourteenth-century
+        epitaph would read <em>le peccata</em>, not <em>la peccata</em>.
+        And the word <em>inventor</em> did not exist in the Florentine
+        vernacular of the period. A real Salvino degli Armati died in
+        1340 — a humble artisan who never dealt with eyeglasses.</p>
+    </div>
+
+    <div class="node free">
+      <span class="yr">1946</span>
+      <h3>Still running, twenty-six years after</h3>
+      <p class="where"><em>El Diario Palentino</em>, Palencia, 10 and 11
+        January 1946 — consecutive days</p>
+      <blockquote>atribuye la modalidad a un italiano llamado
+        <mark>Salvino Armati</mark>, que los usó a principios del
+        siglo…</blockquote>
+    </div>
+
+    <div class="node free">
+      <span class="yr">1995</span>
+      <h3>In a children's book, citing nothing</h3>
+      <p class="where"><em>Incredible inventions</em> · three editions of
+        <em>Grandpa's Glasses</em></p>
+      <blockquote>engraved with gold lettering that read: "Here lies
+        <mark>Salvino Armati</mark>, inventor of the eyeglass. God
+        forgive him…"</blockquote>
+      <p class="gloss">Seventy-five years after the refutation, fifty-two
+        after the monument came down. The surviving vector is books for
+        children.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="open">
+  <div class="wrap narrow">
+    <h2>Still open</h2>
+    <ol>
+      <li><b>1684 is unverified.</b> The del Migliore node rests on a
+        single weak secondary source and has not been retrieved.</li>
+      <li><b>The English vector is unexplained.</b> Manni was never
+        translated. Something carried the claim into English before
+        1823.</li>
+      <li><b>The 1893 wire original has not been found.</b> Locating it
+        would date the saturation to a week rather than a year.</li>
+      <li><b>The UK national archive returns nothing</b> under this
+        phrase, in a chain that otherwise spans four languages.</li>
+      <li><b>Del Lungo's 1920 paper is not in the retrieved set.</b> The
+        demolition node is currently the only one still resting on
+        secondary sources.</li>
+    </ol>
+  </div>
+</section>
+
+<footer class="colo">
+  <div class="wrap narrow">
+    <p>Every dated node above carries an archive identifier and a holding
+      institution, retrieved on 10 September 2026. Multiple national and
+      international archives were searched. For details on this, please
+      contact <a href="mailto:SPeacock@traceformanalytics.com">SPeacock@traceformanalytics.com</a>.</p>
+    <p>Twenty-five records were returned against 517 matches. The chain is
+      established; it is not exhaustive. Earlier or denser nodes may sit
+      in the 492 not seen.</p>
+    <p>Quotations are reproduced as the archives return them, including
+      scanning damage.</p>
+  </div>
+</footer>
+
+</body>
+</html>
